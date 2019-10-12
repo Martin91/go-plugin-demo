@@ -3,11 +3,13 @@ package main
 import (
 	"fmt"
 	"os"
+	"plugin"
+	"plugin_demo/common"
 )
-import "plugin"
 
 type Greeter interface {
 	Greet()
+	GreetMsg() common.WelcomeMsg
 }
 
 func main() {
@@ -48,4 +50,5 @@ func main() {
 	}
 
 	greeter.Greet()
+	fmt.Printf("Msg is:\n%s", greeter.GreetMsg())
 }
